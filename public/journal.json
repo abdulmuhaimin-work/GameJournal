@@ -1,5 +1,23 @@
 {
-  "plans": [],
-  "logEntries": [],
-  "exportedAt": ""
+  "plans": [
+    {
+      "id": "152e6497-8b92-4469-9d55-06872706917d",
+      "title": "Art direction",
+      "description": "Decide what kind of style for the aesthetic",
+      "status": "in_progress",
+      "createdAt": "2026-03-10T08:46:22.529Z",
+      "targetDate": null,
+      "sortOrder": 0
+    }
+  ],
+  "logEntries": [
+    {
+      "id": "91e1bcfc-b591-49fb-83d8-e999f85f62fb",
+      "date": "2026-03-10",
+      "content": "create the website for game development journal",
+      "createdAt": "2026-03-10T08:45:31.719Z",
+      "updatedAt": "2026-03-10T08:45:31.719Z"
+    }
+  ],
+  "exportedAt": "2026-03-10T08:46:28.827Z"
 }
