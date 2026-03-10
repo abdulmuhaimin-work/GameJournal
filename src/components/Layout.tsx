@@ -8,8 +8,20 @@ export default function Layout() {
 
   const handlePublish = async () => {
     setPublishStatus(null)
-    const { wrote } = await publishToRepo()
-    setPublishStatus(wrote ? 'Written to public/journal.json — commit & push to deploy.' : 'Downloaded journal.json (publish server not running).')
+    const { wrote, deployed, noChanges, error } = await publishToRepo()
+    if (!wrote) {
+      setPublishStatus(error ? `Error: ${error}` : 'Downloaded journal.json (publish server not running).')
+      return
+    }
+    if (deployed && noChanges) {
+      setPublishStatus('Saved. No changes to push.')
+    } else if (deployed) {
+      setPublishStatus('Saved and pushed — deploy may take a minute.')
+    } else if (error) {
+      setPublishStatus(`Saved to disk. Push failed: ${error}`)
+    } else {
+      setPublishStatus('Written to public/journal.json — commit & push to deploy.')
+    }
   }
 
   return (

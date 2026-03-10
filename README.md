@@ -14,8 +14,8 @@ This starts both the Vite dev server and a small **publish server** (port 31337)
 - **Plan**: Add and edit goals/milestones.
 - **Daily Log**: Create or edit entries by date; use “Today” for today’s entry.
 - **Publish**: Click **Publish** in the nav:
-  - If the publish server is running, it writes `public/journal.json` on disk. Then **commit and push**; your CI will deploy the new content.
-  - If you ran only `npm run dev:vite`, Publish falls back to downloading `journal.json` (you can save it to `public/journal.json` yourself).
+  - If the publish server is running, it writes `public/journal.json` and runs **git add → commit → push**, so your CD (Vercel, Netlify, etc.) deploys automatically.
+  - If you ran only `npm run dev:vite`, Publish falls back to downloading `journal.json`.
 
 Data is stored in SQLite in the browser (sql.js) and persisted to IndexedDB.
 
@@ -23,11 +23,10 @@ Data is stored in SQLite in the browser (sql.js) and persisted to IndexedDB.
 
 1. Run `npm run dev` (Vite + publish server).
 2. Edit your journal in the browser.
-3. Click **Publish** → `public/journal.json` is updated on disk.
-4. Commit and push (e.g. `git add public/journal.json && git commit -m "Update journal" && git push`).
-5. Your host (Vercel, Netlify, GitHub Pages, etc.) builds from the repo and deploys; the new snapshot is live.
+3. Click **Publish** → `public/journal.json` is updated and **git add, commit, push** runs automatically.
+4. Your host (Vercel, Netlify, GitHub Pages, etc.) builds from the repo and deploys; the new snapshot is live.
 
-No manual copy/paste: the published site always comes from the file in the repo.
+Ensure the repo has a remote and you’re authenticated (`git push` must succeed). If push fails (e.g. no remote or auth), the UI shows “Saved to disk. Push failed: …” and you can push manually.
 
 ## View mode (public site)
 

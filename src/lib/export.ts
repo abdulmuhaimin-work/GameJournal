@@ -21,16 +21,21 @@ export function downloadJournalJson(): void {
   URL.revokeObjectURL(url)
 }
 
-/** Try to write journal to public/journal.json via local publish server; fall back to download if server not running. */
-export async function publishToRepo(): Promise<{ wrote: boolean }> {
+/** Try to write journal to public/journal.json via local publish server and optionally git push; fall back to download if server not running. */
+export async function publishToRepo(): Promise<{ wrote: boolean; deployed?: boolean; noChanges?: boolean; error?: string }> {
   const data = exportJournal()
   try {
     const res = await fetch('/api/publish', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, deploy: true }),
     })
-    if (res.ok) return { wrote: true }
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}))
+      return { wrote: false, error: err.error || res.statusText }
+    }
+    const result = (await res.json()) as { wrote?: boolean; deployed?: boolean; noChanges?: boolean; error?: string }
+    return { wrote: true, deployed: result.deployed, noChanges: result.noChanges, error: result.error }
   } catch {
     /* server not running */
   }
