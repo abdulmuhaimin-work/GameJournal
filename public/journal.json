@@ -8,6 +8,15 @@
       "createdAt": "2026-03-10T08:46:22.529Z",
       "targetDate": null,
       "sortOrder": 0
+    },
+    {
+      "id": "ea590d52-819f-4398-9444-6650dd51eebd",
+      "title": "Game play mechanics",
+      "description": "Finalise the main mechanic and its deriavative.",
+      "status": "in_progress",
+      "createdAt": "2026-03-11T03:21:24.691Z",
+      "targetDate": null,
+      "sortOrder": 0
     }
   ],
   "logEntries": [
@@ -26,5 +35,5 @@
       "updatedAt": "2026-03-10T08:53:32.007Z"
     }
   ],
-  "exportedAt": "2026-03-11T03:07:47.798Z"
+  "exportedAt": "2026-03-11T03:21:27.976Z"
 }
