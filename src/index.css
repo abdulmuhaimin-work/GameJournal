@@ -78,6 +78,12 @@ input:focus, textarea:focus {
   padding: var(--space-lg) var(--space);
 }
 
+@media (min-width: 1024px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
 .page-title {
   font-size: 1.5rem;
   font-weight: 700;
