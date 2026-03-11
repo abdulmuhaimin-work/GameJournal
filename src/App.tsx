@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { isEditMode } from './config'
 import { initDb } from './db/init'
+import { syncJournalFromFile } from './data/syncJournal'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Plan from './pages/Plan'
@@ -16,7 +17,10 @@ function App() {
       setReady(true)
       return
     }
-    initDb().then(() => setReady(true)).catch(console.error)
+    initDb()
+      .then(() => syncJournalFromFile())
+      .then(() => setReady(true))
+      .catch(console.error)
   }, [])
 
   if (!ready) {
