@@ -3,7 +3,7 @@
     {
       "id": "152e6497-8b92-4469-9d55-06872706917d",
       "title": "Art direction",
-      "description": "Decide what kind of style for the aesthetic",
+      "description": "Decide what kind of style for the aesthetic. \n\nShould I go for the pixel art aesthetic?\npro: known technique\ncons: I dont have the skills\n\nShould I integrate real-life photo for the environment and asset?\nPro: should be easier\nCons: how? and what kind of looks will it be?",
       "status": "in_progress",
       "createdAt": "2026-03-10T08:46:22.529Z",
       "targetDate": null,
@@ -12,14 +12,21 @@
     {
       "id": "ea590d52-819f-4398-9444-6650dd51eebd",
       "title": "Game play mechanics",
-      "description": "Finalise the main mechanic and its deriavative.",
-      "status": "in_progress",
+      "description": "Finalise the main mechanic and its deriavative.\n\nResult: continue with the jumping game mechanic. But will revise as development goes further and whatever feels fun will be tested",
+      "status": "done",
       "createdAt": "2026-03-11T03:21:24.691Z",
       "targetDate": null,
       "sortOrder": 0
     }
   ],
   "logEntries": [
+    {
+      "id": "0ce98450-6cbd-4b6a-a086-03d71c22e147",
+      "date": "2026-03-12",
+      "content": "Came to a decision for the game - continue on iterating the jumping game, iterating the fun as I go",
+      "createdAt": "2026-03-12T15:17:59.648Z",
+      "updatedAt": "2026-03-12T15:17:59.648Z"
+    },
     {
       "id": "f4d4c877-0ce5-469d-91a4-77ccf2fdc0d6",
       "date": "2026-03-11",
@@ -35,5 +42,5 @@
       "updatedAt": "2026-03-10T08:53:32.007Z"
     }
   ],
-  "exportedAt": "2026-03-11T03:21:27.976Z"
+  "exportedAt": "2026-03-12T15:22:30.375Z"
 }
